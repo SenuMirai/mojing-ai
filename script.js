@@ -92,9 +92,9 @@ function createParticles() {
             y: Math.random() * canvas.height,
             vx: (Math.random() - 0.5) * 0.3,
             vy: (Math.random() - 0.5) * 0.3,
-            radius: Math.random() * 2 + 0.5,
-            opacity: Math.random() * 0.5 + 0.1,
-            color: Math.random() > 0.5 ? '99, 102, 241' : '236, 72, 153'
+            radius: Math.random() * 1.8 + 0.9,
+            opacity: Math.random() * 0.35 + 0.28,
+            color: Math.random() > 0.5 ? '79, 163, 184' : '116, 195, 212'
         });
     }
 }
@@ -127,7 +127,7 @@ function drawParticles() {
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = `rgba(99, 102, 241, ${(1 - dist / 120) * 0.08})`;
+                ctx.strokeStyle = `rgba(79, 163, 184, ${(1 - dist / 120) * 0.2})`;
                 ctx.lineWidth = 1;
                 ctx.stroke();
             }
@@ -228,17 +228,17 @@ function showToast(message, duration = 3000) {
         bottom: 30px;
         left: 50%;
         transform: translateX(-50%) translateY(20px);
-        background: rgba(26, 26, 46, 0.95);
+        background: rgba(255, 255, 255, 0.88);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(99, 102, 241, 0.3);
-        color: #e2e8f0;
+        border: 1px solid rgba(79, 163, 184, 0.35);
+        color: #1F3B45;
         padding: 14px 28px;
         border-radius: 10px;
         font-size: 0.95rem;
         z-index: 9999;
         opacity: 0;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        box-shadow: 0 8px 32px rgba(31, 59, 69, 0.16);
     `;
     toast.textContent = message;
     document.body.appendChild(toast);

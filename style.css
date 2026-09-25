@@ -6,26 +6,76 @@
 }
 
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --primary-light: #818cf8;
-    --accent: #ec4899;
-    --bg-dark: #0f0f1a;
-    --bg-darker: #08080f;
-    --bg-card: #1a1a2e;
-    --bg-card-hover: #1e1e36;
-    --text: #e2e8f0;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --border: rgba(255,255,255,0.08);
-    --border-hover: rgba(255,255,255,0.15);
-    --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-    --gradient-2: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
-    --gradient-bg: linear-gradient(180deg, #0f0f1a 0%, #08080f 100%);
-    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
-    --shadow-card: 0 4px 24px rgba(0,0,0,0.3);
+    /* ===== 主色：海盐蓝 ===== */
+    --salt-blue-50: #F2F9FB;
+    --salt-blue-100: #E1F1F5;
+    --salt-blue-200: #C4E3EB;
+    --salt-blue-300: #9DD0DC;
+    --salt-blue-400: #6FB6C7;
+    --salt-blue-500: #4FA3B8;
+    --salt-blue-600: #3D8A9D;
+    --salt-blue-700: #316F80;
+
+    /* ===== 中性色：云雾白 / 贝壳灰 ===== */
+    --mist-white: #F7FAFB;
+    --mist-white-deep: #EDF4F7;
+    --shell-gray: #DCE5EA;
+    --shell-gray-soft: #EAF1F4;
+
+    /* ===== 文字：深海墨 ===== */
+    --ink: #1F3B45;
+    --ink-soft: #4A6B77;
+    --ink-muted: #5C7681;
+
+    /* ===== 语义令牌（兼容既有组件变量名） ===== */
+    --primary: var(--salt-blue-500);
+    --primary-dark: var(--salt-blue-600);
+    --primary-light: var(--salt-blue-400);
+    --primary-darkest: var(--salt-blue-700);
+    --accent: #74C3D4;
+
+    --bg-dark: var(--mist-white);
+    --bg-darker: var(--mist-white-deep);
+    --bg-card: rgba(255, 255, 255, 0.72);
+    --bg-card-hover: rgba(255, 255, 255, 0.9);
+
+    --text: var(--ink);
+    --text-secondary: var(--ink-soft);
+    --text-muted: var(--ink-muted);
+
+    --border: rgba(31, 59, 69, 0.10);
+    --border-hover: rgba(79, 163, 184, 0.38);
+
+    --gradient-1: linear-gradient(135deg, #4FA3B8 0%, #74C3D4 55%, #A8DCE6 100%);
+    --gradient-2: linear-gradient(135deg, #6FB6C7 0%, #4FA3B8 100%);
+    --gradient-bg: linear-gradient(180deg, #F7FAFB 0%, #E8F2F6 100%);
+
+    --shadow-glow: 0 0 40px rgba(79, 163, 184, 0.22);
+    --shadow-card: 0 8px 32px rgba(31, 59, 69, 0.08);
+    --shadow-card-hover: 0 16px 44px rgba(31, 59, 69, 0.14);
+
+    /* ===== 毛玻璃规范 ===== */
+    --glass-bg: rgba(255, 255, 255, 0.58);
+    --glass-bg-strong: rgba(255, 255, 255, 0.76);
+    --glass-border: rgba(255, 255, 255, 0.85);
+    --glass-blur: 16px;
+    --glass-blur-lg: 24px;
+
+    /* ===== 间距规范（8pt 栅格） ===== */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+
     --radius: 16px;
     --radius-sm: 10px;
+    --radius-lg: 24px;
+    --radius-pill: 999px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -106,7 +156,7 @@ img {
     border-radius: 10px;
     color: white;
     font-size: 1.1rem;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 12px rgba(79, 163, 184, 0.4);
 }
 
 .logo-text {
@@ -206,8 +256,8 @@ img {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(79, 163, 184, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(116, 195, 212, 0.08) 0%, transparent 50%);
     z-index: 0;
     animation: bgPulse 8s ease-in-out infinite alternate;
 }
@@ -231,8 +281,8 @@ img {
 .hero-badge {
     display: inline-block;
     padding: 6px 16px;
-    background: rgba(99, 102, 241, 0.15);
-    border: 1px solid rgba(99, 102, 241, 0.3);
+    background: rgba(79, 163, 184, 0.15);
+    border: 1px solid rgba(79, 163, 184, 0.3);
     border-radius: 50px;
     font-size: 0.85rem;
     color: var(--primary-light);
@@ -241,8 +291,8 @@ img {
 }
 
 @keyframes badgePulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.3); }
-    50% { box-shadow: 0 0 0 8px rgba(99, 102, 241, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(79, 163, 184, 0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(79, 163, 184, 0); }
 }
 
 .hero-title {
@@ -309,12 +359,12 @@ img {
 .btn-primary {
     background: var(--gradient-1);
     color: white;
-    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 16px rgba(79, 163, 184, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 8px 24px rgba(79, 163, 184, 0.5);
 }
 
 .btn-glow {
@@ -456,8 +506,8 @@ img {
 .section-tag {
     display: inline-block;
     padding: 4px 14px;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(79, 163, 184, 0.1);
+    border: 1px solid rgba(79, 163, 184, 0.2);
     border-radius: 50px;
     font-size: 0.85rem;
     color: var(--primary-light);
@@ -752,7 +802,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(79, 163, 184, 0.1);
     border-radius: 50%;
     color: var(--primary-light);
 }
@@ -833,54 +883,41 @@ img {
     font-size: 0.9rem;
 }
 
-/* ==================== 联系方式 ==================== */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.contact-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 40px;
+/* ==================== 参赛团队（基础布局，配色见文末设计系统层） ==================== */
+.team-panel {
     text-align: center;
+    border-radius: var(--radius);
     transition: var(--transition);
 }
 
-.contact-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-4px);
+.team-label {
+    display: inline-block;
+    padding: 5px 14px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    border-radius: var(--radius-pill);
 }
 
-.contact-icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 20px;
+.team-name {
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.team-members {
+    display: grid;
+}
+
+.team-member {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(99, 102, 241, 0.1);
-    border-radius: 50%;
-    color: var(--primary-light);
+    border-radius: var(--radius);
+    transition: var(--transition);
 }
 
-.contact-card h3 {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-}
-
-.contact-value {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.contact-link:hover {
-    color: var(--primary-light);
+.team-member:hover {
+    transform: translateY(-3px);
 }
 
 /* ==================== 页脚 ==================== */
@@ -952,7 +989,7 @@ img {
     visibility: hidden;
     transform: translateY(20px);
     transition: var(--transition);
-    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 16px rgba(79, 163, 184, 0.4);
     z-index: 999;
 }
 
@@ -964,7 +1001,7 @@ img {
 
 .back-to-top:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 8px 24px rgba(79, 163, 184, 0.5);
 }
 
 /* ==================== 滚动动画 ==================== */
@@ -1054,5 +1091,242 @@ img {
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ================================================================
+   设计系统 v2 · 最终生效层
+   主色 海盐蓝 #4FA3B8 | 中性 云雾白 #F7FAFB / 贝壳灰 #DCE5EA
+   统一毛玻璃、区块层次、间距节奏与组件样式
+   ================================================================ */
+
+/* ---------- 1. 页面底色与景深 ---------- */
+body {
+    background: var(--mist-white);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 页面级柔和光晕，避免大面积纯色显得平 */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(58vw 58vw at 10% 6%, rgba(79, 163, 184, 0.10) 0%, transparent 60%),
+        radial-gradient(48vw 48vw at 90% 30%, rgba(196, 227, 235, 0.20) 0%, transparent 62%),
+        radial-gradient(60vw 40vw at 50% 100%, rgba(220, 229, 234, 0.24) 0%, transparent 65%);
+}
+
+/* ---------- 2. 毛玻璃规范 ---------- */
+.navbar.scrolled {
+    background: var(--glass-bg-strong);
+    backdrop-filter: blur(var(--glass-blur-lg)) saturate(150%);
+    -webkit-backdrop-filter: blur(var(--glass-blur-lg)) saturate(150%);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 24px rgba(31, 59, 69, 0.06);
+}
+
+.feature-card,
+.download-card,
+.timeline-content,
+.team-panel,
+.team-member,
+.contact-chip,
+.hero-badge,
+.section-tag {
+    backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+}
+
+.hero-badge,
+.section-tag {
+    background: var(--glass-bg-strong);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 2px 12px rgba(31, 59, 69, 0.05);
+}
+
+/* ---------- 3. 区块背景与间距节奏 ---------- */
+.section {
+    padding: var(--space-9) 0;
+}
+
+.section-dark {
+    background: var(--mist-white-deep);
+}
+
+.section-gradient {
+    background: linear-gradient(180deg, var(--salt-blue-50) 0%, var(--mist-white-deep) 100%);
+}
+
+.section-header {
+    margin-bottom: var(--space-8);
+}
+
+.hero {
+    background: radial-gradient(90vw 70vh at 50% 0%, var(--salt-blue-100) 0%, var(--mist-white) 60%);
+}
+
+/* ---------- 4. 卡片族统一 ---------- */
+.feature-card,
+.download-card,
+.timeline-content,
+.team-panel,
+.team-member {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
+}
+
+.feature-card:hover,
+.download-card:hover,
+.timeline-content:hover,
+.team-member:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* ---------- 5. 团队区块 ---------- */
+.team-panel {
+    max-width: 880px;
+    margin: 0 auto var(--space-6);
+    padding: var(--space-7) var(--space-6);
+}
+
+.team-header {
+    margin-bottom: var(--space-6);
+}
+
+.team-label {
+    background: rgba(79, 163, 184, 0.12);
+    border: 1px solid rgba(79, 163, 184, 0.22);
+    color: var(--salt-blue-700);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.team-name {
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.team-members {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-5);
+}
+
+.team-member {
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    text-align: left;
+}
+
+.member-badge {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: var(--gradient-1);
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(79, 163, 184, 0.28);
+}
+
+.member-badge svg {
+    width: 22px;
+    height: 22px;
+}
+
+.member-info {
+    min-width: 0;
+}
+
+.member-name {
+    font-size: 1.06rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.member-role {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--salt-blue-700);
+    background: rgba(79, 163, 184, 0.14);
+    border-radius: var(--radius-pill);
+}
+
+.member-desc {
+    margin-top: 8px;
+    font-size: 0.83rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* ---------- 6. 联系区紧凑胶囊 ---------- */
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--salt-blue-700);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.contact-chip:hover {
+    color: #fff;
+    background: var(--gradient-1);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(79, 163, 184, 0.3);
+}
+
+.contact-chip svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* ---------- 7. 按钮与页脚 ---------- */
+.btn-primary {
+    box-shadow: 0 8px 24px rgba(79, 163, 184, 0.28);
+}
+
+.footer {
+    background: var(--mist-white-deep);
+}
+
+/* ---------- 8. 窄屏适配 ---------- */
+@media (max-width: 768px) {
+    .team-panel {
+        padding: var(--space-6) var(--space-5);
+    }
+
+    .contact-chip {
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 }
