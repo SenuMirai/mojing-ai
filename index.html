@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>墨境AI - 沉浸式网文创作辅助系统</title>
+    <meta name="description" content="墨境AI - 由千宇·未来打造的沉浸式网文创作辅助系统，集成AI写作助手、角色追踪、大纲管理、沉浸式写作等功能">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">墨</span>
+                <span class="logo-text">墨境AI</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#features" class="nav-link">功能特性</a>
+                <a href="#showcase" class="nav-link">界面展示</a>
+                <a href="#changelog" class="nav-link">更新日志</a>
+                <a href="#download" class="nav-link">下载</a>
+                <a href="#contact" class="nav-link">联系</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero" id="hero">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">v2.3 最新版本</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">墨境AI</span>
+            </h1>
+            <p class="hero-subtitle">沉浸式网文创作辅助系统</p>
+            <p class="hero-desc">AI驱动的全能创作工具，让灵感与技术在墨色之境中交融</p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary btn-glow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    立即下载
+                </a>
+                <a href="#features" class="btn btn-outline">了解更多</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="9">0</span>
+                    <span class="stat-label">核心模块</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="7">0</span>
+                    <span class="stat-label">主题风格</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">功能特性</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>向下滚动</span>
+        </div>
+    </section>
+
+    <!-- 功能特性 -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">功能特性</span>
+                <h2 class="section-title">为创作者打造的全能工具</h2>
+                <p class="section-desc">从灵感到成稿，墨境AI陪伴你走过创作的每一步</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal" style="--delay:0.1s">
+                    <div class="feature-icon" style="--color:#6366f1">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>AI 创作助手</h3>
+                    <p>接入 DeepSeek、OpenAI 等主流大模型，支持命令式操作所有模块。智能续写、角色生成、情节推演，让AI成为你的创作搭档。</p>
+                    <ul class="feature-list">
+                        <li>多AI配置管理，一键切换</li>
+                        <li>命令系统支持全模块CRUD</li>
+                        <li>Token消耗实时统计</li>
+                        <li>文件上传与内容读取</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal" style="--delay:0.2s">
+                    <div class="feature-icon" style="--color:#ec4899">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+                    </div>
+                    <h3>沉浸式写作</h3>
+                    <p>专注创作，心无旁骛。全屏沉浸式编辑器，搭配环境音效与动态背景，营造最佳写作氛围。</p>
+                    <ul class="feature-list">
+                        <li>查找替换功能（Ctrl+F）</li>
+                        <li>标签式多文档编辑</li>
+                        <li>7种环境音效（雨声、森林、咖啡馆等）</li>
+                        <li>动态背景特效（雪花、星轨、萤火虫等）</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal" style="--delay:0.3s">
+                    <div class="feature-icon" style="--color:#f59e0b">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3>角色追踪系统</h3>
+                    <p>自动追踪角色状态变化，主角与配角一目了然。人物关系网络可视化，让复杂角色关系不再混乱。</p>
+                    <ul class="feature-list">
+                        <li>主角卡片金色高亮区分</li>
+                        <li>卡片视图自动折叠历史版本</li>
+                        <li>人物关系颜色分类标注</li>
+                        <li>时间轴展示变化历程</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal" style="--delay:0.4s">
+                    <div class="feature-icon" style="--color:#10b981">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <h3>物品与伏笔管理</h3>
+                    <p>精细追踪每一件物品的归属与流转，货币变动精确记录。伏笔回收率统计，确保故事逻辑无懈可击。</p>
+                    <ul class="feature-list">
+                        <li>物品分类筛选（武器、防具、货币等）</li>
+                        <li>主角/团队/配角持有物颜色区分</li>
+                        <li>货币数值精确追踪与备注</li>
+                        <li>伏笔设置与回收进度统计</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal" style="--delay:0.5s">
+                    <div class="feature-icon" style="--color:#8b5cf6">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    </div>
+                    <h3>九大创作模块</h3>
+                    <p>覆盖网文创作的全流程，从世界观构建到正文写作，每个环节都有专属工具。</p>
+                    <ul class="feature-list">
+                        <li>世界观、设定、角色、大纲</li>
+                        <li>正文写作、章节管理</li>
+                        <li>角色状态、人物关系追踪</li>
+                        <li>物品追踪、伏笔管理</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal" style="--delay:0.6s">
+                    <div class="feature-icon" style="--color:#06b6d4">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h3>主题与个性化</h3>
+                    <p>7种精美主题风格，玻璃拟态、深色模式、暖色森林海洋随心切换。动态背景与音效打造专属创作空间。</p>
+                    <ul class="feature-list">
+                        <li>7种主题风格（玻璃、深色、暖色等）</li>
+                        <li>自定义背景图/视频</li>
+                        <li>字体颜色自适应背景亮度</li>
+                        <li>所有设置本地持久化保存</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 界面展示 -->
+    <section class="section section-dark" id="showcase">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">界面展示</span>
+                <h2 class="section-title">沉浸于墨色之境</h2>
+                <p class="section-desc">精心打磨的每一处界面细节</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-item reveal large">
+                    <div class="showcase-img-wrapper">
+                        <img src="images/immersive_writing.png" alt="沉浸式写作界面" loading="lazy">
+                        <div class="showcase-overlay">
+                            <h3>沉浸式写作</h3>
+                            <p>全屏专注模式，搭配动态背景与环境音效</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-item reveal">
+                    <div class="showcase-img-wrapper">
+                        <img src="images/character_tracking.png" alt="角色追踪界面" loading="lazy">
+                        <div class="showcase-overlay">
+                            <h3>角色追踪</h3>
+                            <p>主角卡片金色高亮，关系网络一目了然</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-item reveal">
+                    <div class="showcase-img-wrapper">
+                        <img src="images/settings_interface.png" alt="AI设置界面" loading="lazy">
+                        <div class="showcase-overlay">
+                            <h3>AI 设置</h3>
+                            <p>多AI配置管理，一键切换</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-item reveal">
+                    <div class="showcase-img-wrapper">
+                        <img src="images/theme_interface.png" alt="主题设置界面" loading="lazy">
+                        <div class="showcase-overlay">
+                            <h3>主题个性化</h3>
+                            <p>7种主题风格随心切换</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-item reveal">
+                    <div class="showcase-img-wrapper">
+                        <img src="images/item_tracking.png" alt="物品追踪界面" loading="lazy">
+                        <div class="showcase-overlay">
+                            <h3>物品追踪</h3>
+                            <p>分类筛选，精确追踪每一件物品</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 更新日志 -->
+    <section class="section" id="changelog">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">更新日志</span>
+                <h2 class="section-title">持续进化</h2>
+                <p class="section-desc">每一次更新都让创作更顺畅</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v2.3</span>
+                        <span class="version-date">2026-09-25</span>
+                        <h3>动态特效与背景音全面升级</h3>
+                        <ul>
+                            <li>新增统一环境引擎，主界面与沉浸式写作共用同一套特效与音效</li>
+                            <li>动态特效扩充至 13 种，新增「落樱」「秋叶」，全面支持高清屏 DPR 适配与景深分层</li>
+                            <li>引入 9 段专业级环境录音，音效扩充至 12 种，新增细雨、雷雨、鸟鸣、溪流、粉红噪音</li>
+                            <li>响度归一化 + 无缝交叉淡化循环 + 分层混音，切换音效不再忽大忽小、不再有接缝杂音</li>
+                            <li>沉浸式「环境」与主界面「主题」统一命名为「主题背景」</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v2.2</span>
+                        <span class="version-date">2026-07-25</span>
+                        <h3>查找替换与环境设置完善</h3>
+                        <ul>
+                            <li>沉浸式写作新增查找替换功能（Ctrl+F），支持区分大小写、全字匹配、全部替换</li>
+                            <li>搜索结果高亮显示，当前匹配项脉冲动画，自动滚动定位</li>
+                            <li>环境音效、动态背景、编辑器设置全面生效并持久化保存</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v2.1</span>
+                        <span class="version-date">2026-07-24</span>
+                        <h3>追踪系统与版本信息</h3>
+                        <ul>
+                            <li>主角卡片金色高亮，人物关系与物品持有颜色分类区分</li>
+                            <li>货币追踪提示词优化，精确数值记录与变动汇总</li>
+                            <li>物品追踪分类筛选（武器、防具、货币等11类）</li>
+                            <li>新增版本信息查阅功能，顶部版本徽章点击查看</li>
+                            <li>修复AI连接测试失败问题（URL处理逻辑优化）</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v2.0</span>
+                        <span class="version-date">2026-07-24</span>
+                        <h3>AI助手升级</h3>
+                        <ul>
+                            <li>AI写作助手支持文件上传内容读取（文本与图片）</li>
+                            <li>主界面顶部新增JSON项目文件导入功能</li>
+                            <li>移除无效的文件导入功能，代码清理优化</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v1.9</span>
+                        <span class="version-date">2026-07-24</span>
+                        <h3>命令系统与统计</h3>
+                        <ul>
+                            <li>AI创作助手命令模式，支持全模块CRUD操作</li>
+                            <li>Token使用统计（今日用量、累计用量、7天柱状图）</li>
+                            <li>AI面板隐藏/展开切换功能</li>
+                            <li>卡片视图布局与侧边栏字体优化</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v1.8</span>
+                        <span class="version-date">2026-07-24</span>
+                        <h3>环境音效与主题重构</h3>
+                        <ul>
+                            <li>环境音效控制面板（白噪音、雨声、森林、咖啡馆等）</li>
+                            <li>标签式多文档管理，支持同时编辑多个章节</li>
+                            <li>7种主题风格（玻璃、深色玻璃、暖色、森林、海洋等）</li>
+                            <li>性能优化工具库（防抖、节流、懒加载、FPS监控）</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v1.7</span>
+                        <span class="version-date">2026-07-23</span>
+                        <h3>卡片折叠与动态背景</h3>
+                        <ul>
+                            <li>卡片视图自动折叠历史版本，堆叠数量徽章</li>
+                            <li>沉浸式写作左侧栏拖动调整宽度</li>
+                            <li>动态背景特效扩展（露珠、六角雪花、星轨）</li>
+                            <li>多AI配置管理，支持同时保存多个接口配置</li>
+                            <li>多背景库管理，支持图片与视频背景</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section class="section section-gradient" id="download">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">立即下载</span>
+                <h2 class="section-title">开启你的创作之旅</h2>
+                <p class="section-desc">Windows 便携版，开箱即用，无需安装 Python 环境</p>
+            </div>
+            <div class="download-cards">
+                <div class="download-card reveal">
+                    <div class="download-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </div>
+                    <h3>Windows 便携版</h3>
+                    <p class="download-version">v2.3 · 约 48.7 MB</p>
+                    <ul class="download-features">
+                        <li>✓ 无需安装 Python 环境</li>
+                        <li>✓ 双击即可运行</li>
+                        <li>✓ 包含完整源代码</li>
+                        <li>✓ 数据本地存储，安全私密</li>
+                    </ul>
+                    <a href="../dist/墨境AI_v2.3_Portable.zip" class="btn btn-primary btn-block" id="downloadBtn" download>
+                        下载便携版
+                    </a>
+                    <p class="download-hint">支持 Windows 10 / 11</p>
+                </div>
+                <div class="download-card reveal" style="--delay:0.15s">
+                    <div class="download-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>源代码</h3>
+                    <p class="download-version">Python · Flask</p>
+                    <ul class="download-features">
+                        <li>✓ 完整项目源码</li>
+                        <li>✓ 可自定义修改</li>
+                        <li>✓ 跨平台运行</li>
+                        <li>✓ requirements.txt 依赖清单</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block">联系作者获取</a>
+                    <p class="download-hint">需要 Python 3.10+ 环境</p>
+                </div>
+            </div>
+            <div class="download-steps reveal">
+                <h3>安装使用指南</h3>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>下载解压</h4>
+                        <p>下载便携版压缩包，解压到任意目录</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>运行程序</h4>
+                        <p>双击「墨境AI.exe」，程序自动打开浏览器</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>配置AI</h4>
+                        <p>在设置中填入API地址、密钥和模型名称</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h4>开始创作</h4>
+                        <p>新建项目，开启你的网文创作之旅</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">联系我们</span>
+                <h2 class="section-title">与你同行</h2>
+                <p class="section-desc">有问题或建议？欢迎随时联系</p>
+            </div>
+            <div class="contact-grid reveal">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3>作者</h3>
+                    <p class="contact-value">千宇·未来</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>邮箱</h3>
+                    <a href="mailto:qianyuweilai@qq.com" class="contact-value contact-link">qianyuweilai@qq.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">墨</span>
+                    <span class="logo-text">墨境AI</span>
+                </div>
+                <p class="footer-desc">沉浸式网文创作辅助系统 · 让灵感与技术在墨色之境中交融</p>
+                <div class="footer-links">
+                    <a href="#features">功能特性</a>
+                    <a href="#showcase">界面展示</a>
+                    <a href="#changelog">更新日志</a>
+                    <a href="#download">下载</a>
+                    <a href="mailto:qianyuweilai@qq.com">联系作者</a>
+                </div>
+                <p class="footer-copyright">© 2026 千宇·未来 · All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部 -->
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
