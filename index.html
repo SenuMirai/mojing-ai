@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>墨境AI - 沉浸式网文创作辅助系统</title>
     <meta name="description" content="墨境AI - 由千宇·未来打造的沉浸式网文创作辅助系统，集成AI写作助手、角色追踪、大纲管理、沉浸式写作等功能">
-    <link rel="stylesheet" href="style.css?v=2.3.1">
+    <link rel="stylesheet" href="style.css?v=2.5.0">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="theme-color" content="#4FA3B8">
@@ -35,7 +35,7 @@
     <section class="hero" id="hero">
         <canvas id="particleCanvas"></canvas>
         <div class="hero-content">
-            <div class="hero-badge">v2.3 最新版本</div>
+            <div class="hero-badge">v2.5 最新版本</div>
             <h1 class="hero-title">
                 <span class="gradient-text">墨境AI</span>
             </h1>
@@ -79,6 +79,32 @@
             </div>
             <div class="features-grid">
                 <div class="feature-card reveal" style="--delay:0.1s">
+                    <div class="feature-icon" style="--color:#4FA3B8">
+                        <svg stroke-linejoin="round" stroke-linecap="round" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="12" cy="18" r="2.5"/><circle cx="19" cy="15" r="2"/><line x1="7" y1="7" x2="10.5" y2="16"/><line x1="17" y1="6.5" x2="13.5" y2="16.5"/><line x1="6.8" y1="5.6" x2="16.6" y2="5.1"/></svg>
+                    </div>
+                    <h3>剧情知识图谱</h3>
+                    <p>把角色、关系、物品、伏笔、势力、地点、章节自动汇总成一张可交互的关系网络，全局脉络一图看清。</p>
+                    <ul class="feature-list">
+                        <li>自研力导向布局，纯原生实现、离线可用</li>
+                        <li>悬停/点击高亮关联，双击跳转编辑</li>
+                        <li>待回收伏笔、关系最密的角色、孤立角色提醒</li>
+                        <li>支持缩放平移、搜索定位、一键导出 PNG</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal" style="--delay:0.15s">
+                    <div class="feature-icon" style="--color:#6FB6C7">
+                        <svg stroke-linejoin="round" stroke-linecap="round" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </div>
+                    <h3>数据自动备份</h3>
+                    <p>每次启动与每天首次保存前自动备份，设置面板内一键恢复，稿件安全无忧。</p>
+                    <ul class="feature-list">
+                        <li>SQLite 在线快照，WAL 下也一致</li>
+                        <li>自动保留最近 10 份，手动备份 20 份</li>
+                        <li>恢复前自动另存当前数据</li>
+                        <li>一键打开数据目录</li>
+                    </ul>
+                </div>
+                <div class="feature-card reveal" style="--delay:0.2s">
                     <div class="feature-icon" style="--color:#4FA3B8">
                         <svg stroke-linejoin="round" stroke-linecap="round" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                     </div>
@@ -187,6 +213,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="showcase-item reveal large">
+                    <div class="showcase-img-wrapper">
+                        <img src="images/knowledge_graph.png" alt="剧情知识图谱界面" loading="lazy">
+                        <div class="showcase-overlay">
+                            <h3>剧情知识图谱</h3>
+                            <p>角色 · 关系 · 物品 · 伏笔一图总览，点击节点即可定位与跳转编辑</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="showcase-item reveal">
                     <div class="showcase-img-wrapper">
                         <img src="images/settings_interface.png" alt="AI设置界面" loading="lazy">
@@ -214,6 +249,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="showcase-item reveal">
+                    <div class="showcase-img-wrapper">
+                        <img src="images/main_interface.png" alt="创作主界面" loading="lazy">
+                        <div class="showcase-overlay">
+                            <h3>模块化创作台</h3>
+                            <p>十八个创作模块 + AI 助手，卡片化浏览与批量管理</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -227,6 +271,36 @@
                 <p class="section-desc">每一次更新都让创作更顺畅</p>
             </div>
             <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v2.5</span>
+                        <span class="version-date">2026-09-26</span>
+                        <h3>剧情知识图谱</h3>
+                        <ul>
+                            <li>新增可视化模块「剧情图谱」：角色、关系、物品、伏笔、势力、地点、章节一图总览</li>
+                            <li>自动从 9 个模块汇总数据，人物关系按类型配色，伏笔关联章节与角色</li>
+                            <li>自研力导向布局（纯原生 Canvas，无外部依赖、完全离线可用），布局稳定后自动适配视图</li>
+                            <li>支持拖拽、缩放、平移、搜索定位、双击跳转编辑、一键导出 PNG 图谱</li>
+                            <li>图谱分析：待回收伏笔清单、关系最多的角色、孤立角色提醒，点击即可定位</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="version-badge">v2.4</span>
+                        <span class="version-date">2026-09-26</span>
+                        <h3>数据自动备份与多项修复</h3>
+                        <ul>
+                            <li>新增数据自动备份：每次启动与每天首次保存前自动备份，自动保留最近 10 份</li>
+                            <li>设置弹窗新增「数据备份」标签页：查看数据目录、立即备份、逐条恢复（恢复前自动另存当前数据）</li>
+                            <li>修复「退出」按钮与关闭页面时后台服务器未关闭的问题（后台进程残留的真正原因）</li>
+                            <li>修复沉浸式写作编辑区右侧被裁切、圆角缺失，侧栏关闭后仍占位的问题</li>
+                            <li>服务改为多线程：AI 生成期间界面其他操作不再被阻塞</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -344,14 +418,14 @@
                         <svg stroke-linejoin="round" stroke-linecap="round" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     </div>
                     <h3>Windows 便携版</h3>
-                    <p class="download-version">v2.3 · 约 48.8 MB</p>
+                    <p class="download-version">v2.5 · 约 53.2 MB</p>
                     <ul class="download-features">
                         <li>✓ 无需安装 Python 环境</li>
                         <li>✓ 双击即可运行</li>
                         <li>✓ 包含完整源代码</li>
                         <li>✓ 数据本地存储，安全私密</li>
                     </ul>
-                    <a href="../dist/墨境AI_v2.3_Portable.zip" class="btn btn-primary btn-block" id="downloadBtn" download>
+                    <a href="../dist/墨境AI_v2.5_Portable.zip" class="btn btn-primary btn-block" id="downloadBtn" download>
                         下载便携版
                     </a>
                     <p class="download-hint">支持 Windows 10 / 11</p>
@@ -475,6 +549,6 @@
         <svg stroke-linejoin="round" stroke-linecap="round" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
 
-    <script src="script.js?v=2.3.0"></script>
+    <script src="script.js?v=2.5.0"></script>
 </body>
 </html>
