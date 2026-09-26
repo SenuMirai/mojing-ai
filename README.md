@@ -65,6 +65,8 @@
 
 > **环境要求**：Windows 10 / 11（64 位）。程序无需安装 Python，浏览器建议使用 Chrome / Edge 最新版。
 > 发行包内同时包含 Python 源码（`app.py`）与依赖清单（`requirements.txt`），可使用 `start_portable.bat` 以源码方式运行（需 Python 3.10+）。
+>
+> **开箱即用**：发行包已内置演示项目《假皇女的我登上神座》——5 章正文、角色状态 19 条、人物关系 18 条、物品追踪 23 条、伏笔 22 条，打开程序即可直接查看卡片视图、时间轴、统计与剧情知识图谱；演示配置为**空密钥占位**，使用 AI 功能前请在设置中填入自己的 API 密钥；想从零开始时新建项目即可。
 
 ## 🔄 版本更新
 
@@ -181,6 +183,8 @@ The app is a **single-file, fully local Windows program**: double-click `MojingA
 5. **Start writing** — create a project and dive in.
 
 > **Requirements**: Windows 10 / 11 (64-bit). No Python installation needed. Chrome / Edge recommended. The package also ships the Python source (`app.py`) and `requirements.txt`; run `start_portable.bat` to launch from source (Python 3.10+).
+>
+> **Demo data included**: the package ships with a sample project (《假皇女的我登上神座》) containing 5 chapters, 19 character states, 18 relations, 23 items and 22 foreshadowing entries — open the app and explore every module (and the Plot Knowledge Graph) right away. The bundled AI config is a placeholder with an empty key, so fill in your own key in Settings before using AI features; create a new project whenever you want to start from scratch.
 
 ## 🔄 Release Highlights
 
