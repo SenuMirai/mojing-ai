@@ -197,7 +197,7 @@ function resolveDownloadUrl() {
             };
         }
     }
-    return { url: '../dist/墨境AI_v2.5_Portable.zip', name: '墨境AI_v2.5_Portable.zip' };
+    return { url: '../dist/墨境AI_v2.5.1_Portable.zip', name: '墨境AI_v2.5.1_Portable.zip' };
 }
 
 downloadBtn.addEventListener('click', (e) => {

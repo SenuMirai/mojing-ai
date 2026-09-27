@@ -7,7 +7,7 @@
 **沉浸式网文创作辅助系统**
 **An Immersive AI-Assisted Writing System for Web-Novel Authors**
 
-![version](https://img.shields.io/badge/version-v2.5-4FA3B8)
+![version](https://img.shields.io/badge/version-v2.5.1-4FA3B8)
 ![platform](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-3D8A9D)
 ![stack](https://img.shields.io/badge/stack-Python%20Flask%20%2B%20SQLite%20%2B%20Vanilla%20JS-6FB6C7)
 ![offline](https://img.shields.io/badge/data-100%25%20local-7FB8A4)
@@ -69,6 +69,13 @@
 > **开箱即用**：发行包已内置演示项目《假皇女的我登上神座》——5 章正文、角色状态 19 条、人物关系 18 条、物品追踪 23 条、伏笔 22 条，打开程序即可直接查看卡片视图、时间轴、统计与剧情知识图谱；演示配置为**空密钥占位**，使用 AI 功能前请在设置中填入自己的 API 密钥；想从零开始时新建项目即可。
 
 ## 🔄 版本更新
+
+### v2.5.1 — 修复推理模型下的 AI 追踪（2026-09-27）
+
+- 修复推理类模型（如 `deepseek-v4-pro`）下**「AI 自动追踪」与「智能导入」失败**的问题：推理模型的思维链同样计入输出 token，此前 4096 的预算被思维链耗尽、最终答案为空，表现为「AI返回格式不是JSON数组」
+- 追踪 / 智能导入 / 对话三处改为**为最终结果预留 8192 输出预算**（服务商拒绝时自动退回用户配置值），并放宽请求超时
+- JSON 提取更稳健：兼容代码块、对象包裹与**输出被截断**的情况
+- 模型仅输出思维链时给出可操作提示（调大 Max Tokens 或改用非推理模型）
 
 ### v2.5 — 剧情知识图谱（2026-09-26）
 
@@ -187,6 +194,8 @@ The app is a **single-file, fully local Windows program**: double-click `MojingA
 > **Demo data included**: the package ships with a sample project (《假皇女的我登上神座》) containing 5 chapters, 19 character states, 18 relations, 23 items and 22 foreshadowing entries — open the app and explore every module (and the Plot Knowledge Graph) right away. The bundled AI config is a placeholder with an empty key, so fill in your own key in Settings before using AI features; create a new project whenever you want to start from scratch.
 
 ## 🔄 Release Highlights
+
+**v2.5.1 — Reasoning-model tracking fix (2026-09-27)** · Fixed “AI Auto-Track” and “Smart Import” failing with reasoning models (e.g. `deepseek-v4-pro`): chain-of-thought tokens count toward the output budget, so the previous 4096 cap was fully consumed by reasoning and the final answer came back empty. All three AI calls now reserve an 8192-token output budget (falling back to the user's configured value if a provider rejects it), with longer timeouts, more tolerant JSON extraction (code fences, wrapped objects, truncated output), and an actionable error message when a model returns reasoning only.
 
 **v2.5 — Plot Knowledge Graph (2026-09-26)** · Interactive graph of characters / relations / items / foreshadowing / factions / locations / chapters · self-developed offline force-directed layout · highlight, search, double-click-to-edit, PNG export · graph analysis panel (unresolved foreshadowing, top-connected characters, isolated characters) · type filters and legend.
 

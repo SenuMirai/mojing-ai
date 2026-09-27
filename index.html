@@ -35,7 +35,7 @@
     <section class="hero" id="hero">
         <canvas id="particleCanvas"></canvas>
         <div class="hero-content">
-            <div class="hero-badge">v2.5 最新版本</div>
+            <div class="hero-badge">v2.5.1 最新版本</div>
             <h1 class="hero-title">
                 <span class="gradient-text">墨境AI</span>
             </h1>
@@ -274,6 +274,20 @@
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="version-badge">v2.5.1</span>
+                        <span class="version-date">2026-09-27</span>
+                        <h3>修复推理模型下的 AI 追踪</h3>
+                        <ul>
+                            <li>修复使用推理模型（如 deepseek-v4-pro）时「AI 自动追踪」失败：思维链会占用输出 token，导致最终答案为空</li>
+                            <li>为最终结果预留 8192 输出预算（服务商拒绝时自动退回你的配置值），并放宽请求超时</li>
+                            <li>JSON 提取更稳健：兼容代码块、对象包裹与输出被截断的情况</li>
+                            <li>模型仅输出思维链时给出可操作提示，不再只报「格式错误」</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
                         <span class="version-badge">v2.5</span>
                         <span class="version-date">2026-09-26</span>
                         <h3>剧情知识图谱</h3>
@@ -418,7 +432,7 @@
                         <svg stroke-linejoin="round" stroke-linecap="round" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     </div>
                     <h3>Windows 便携版</h3>
-                    <p class="download-version">v2.5 · 约 53.5 MB</p>
+                    <p class="download-version">v2.5.1 · 约 53.5 MB</p>
                     <ul class="download-features">
                         <li>✓ 无需安装 Python 环境</li>
                         <li>✓ 双击即可运行</li>
@@ -426,7 +440,7 @@
                         <li>✓ 包含完整源代码</li>
                         <li>✓ 数据本地存储，安全私密</li>
                     </ul>
-                    <a href="../dist/墨境AI_v2.5_Portable.zip" class="btn btn-primary btn-block" id="downloadBtn" download>
+                    <a href="../dist/墨境AI_v2.5.1_Portable.zip" class="btn btn-primary btn-block" id="downloadBtn" download>
                         下载便携版
                     </a>
                     <p class="download-hint">支持 Windows 10 / 11</p>
@@ -550,6 +564,6 @@
         <svg stroke-linejoin="round" stroke-linecap="round" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
 
-    <script src="script.js?v=2.5.0"></script>
+    <script src="script.js?v=2.5.1"></script>
 </body>
 </html>
